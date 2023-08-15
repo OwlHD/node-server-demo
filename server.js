@@ -1,9 +1,12 @@
 const express = require('express');
-const pokemonData = require('./database.json')
+const cors = require('cors');
+const pokemonData = require('./database.json');
 const PORT = 5000;
 const app = express();
+
+app.use(cors());
+
 app.get('/', (req,res) =>{
-    console.log(pokemonData)
     res.send("Hello")
 });
 
